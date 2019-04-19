@@ -62,7 +62,14 @@ PYBIND11_MODULE(pywincalc, m)
 		.def_readwrite("tir", &OpticsParser::ProductData::IRTransmittance)
 		.def_readwrite("ef", &OpticsParser::ProductData::frontEmissivity)
 		.def_readwrite("eb", &OpticsParser::ProductData::backEmissivity)
-		.def_readwrite("measurements", &OpticsParser::ProductData::measurements);
+		.def_readwrite("measurements", &OpticsParser::ProductData::measurements)
+		.def_readwrite("manufacturer", &OpticsParser::ProductData::manufacturer)
+		.def_readwrite("material", &OpticsParser::ProductData::material)
+		.def_readwrite("coating_name", &OpticsParser::ProductData::coatingName)
+		.def_readwrite("coated_side", &OpticsParser::ProductData::coatedSide)
+		.def_readwrite("substrate_filename", &OpticsParser::ProductData::substrateFilename)
+		.def_readwrite("appearance", &OpticsParser::ProductData::appearance)
+		.def_readwrite("acceptance", &OpticsParser::ProductData::acceptance);
 		
 
 	py::enum_<Spectrum_Type>(m, "Spectrum_Type", py::arithmetic())
